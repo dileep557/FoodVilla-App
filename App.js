@@ -1,57 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-//******************************************************************************************************************************** */
-//*********const ReactHeading = React.createElement("h1", {className: "head", children: "hello React !"});
-
-
-//React with jsx
-
-//const jsxHeading= (<h1 className="head">hello jsx!</h1>);
-
-
-// to create  multiple element using react fragment
-
-// const jsxHeading=  <>
-//                   <h1 className="head">hello jsx !</h1>
-//                   <p>this is react fragment</p>
-
-// </>
-
-
-// create element using jsx
-/*
-const jsxHeading=React.createElement("h1", {style:{ color:"red", backgroundColor:"green"},key:"2022" ,children:"hello word", className: "head", id:"title" });
-const jsxHeading1=React.createElement("h2", {className: "head", key:"2023" ,children: "hello React !"});
-const jsxHeading3=React.createElement("div", {className: "head"},[jsxHeading, jsxHeading1]);// passing multiple element in create element inside Square bracket
-
-// react component (functional component and class based component);
-// Functional component
- // use react element and react componnent inside curly bracket like this {React-element } and {<react-componnentName}
-const Component = ()=>{
-   return (
-        <>
-           
-            {jsxHeading
-            // we can write any code of javascript inside curly bracket 
-            // we can add comment inside jsx inside the curly bracket otherwise it will consider as content of jsx 
-            } 
-            {jsxHeading1}
-            
-
-            <h1>functional component</h1>
-            <h2>1Always write name of functional component first letter is capital letter</h2>
-            <h3>2functional componnet is nothing but it is just javaScript function</h3>
-            <h3>3 it returns some jsx or component</h3>
-            <h3>4it always call inside closing angular bracket</h3>
-        </>
-   );
-    
-}
-
-ReactDOM.createRoot(document.getElementById("root")).render(<Component/>);
-*************************************************************************************************************************************/
+//******************************************************************************************************************************** */s
 const headerColour={ backgroundColor:'gray'}; 
+
+//****Create Component For Logo of FoodVilla */
 const Title = ()=>(
 
    <a href="/">    
@@ -62,7 +15,7 @@ const Title = ()=>(
     );
  
       
-
+// <- Create Header Component ->    
 const HeaderComponent = ()=>{
     return(
         <div style={headerColour} className="header">
@@ -87,6 +40,7 @@ const HeaderComponent = ()=>{
 //     rating: "4.2"
 // }
 // const style1={backgroundColor:"green"};
+
 
 export const restaurantList = [
     {
@@ -834,7 +788,6 @@ const RestrauntCard = ({name, cuisines,cloudinaryImageId , lastMileTravelString}
         
     );
 }
-
 
 
 const Body= ()=>{
