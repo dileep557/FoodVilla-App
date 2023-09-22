@@ -1,0 +1,11 @@
+{
+  "name": "foodvilla-app",
+  "version": "1.0.0",
+  "description": "Food ordering App",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Dileep yadav",
+  "license": "ISC"
+}
