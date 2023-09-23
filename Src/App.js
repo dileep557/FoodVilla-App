@@ -1,37 +1,38 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import HeaderComponent from "./component/Header";
 
-//******************************************************************************************************************************** */s
-const headerColour={ backgroundColor:'gray'}; 
+//************************************************************************************************************************************** */
+//const headerColour={ backgroundColor:'gray'}; 
 
 //****Create Component For Logo of FoodVilla */
-const Title = ()=>(
+// const Title = ()=>(
 
-   <a href="/">    
-    <img style={headerColour} className="logo" alt="Food villa" src="https://th.bing.com/th/id/OIP.TIX4gD8UPaw4UwNhjTX5pgHaHa?pid=ImgDet&rs=1"></img>
+//    <a href="/">    
+//     <img style={headerColour} className="logo" alt="Food villa" src="https://th.bing.com/th/id/OIP.TIX4gD8UPaw4UwNhjTX5pgHaHa?pid=ImgDet&rs=1"></img>
     
-    </a>
+//     </a>
 
-    );
+//     );
  
       
-// <- Create Header Component ->    
-const HeaderComponent = ()=>{
-    return(
-        <div style={headerColour} className="header">
-            <Title />
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    );
+// // <- Create Header Component ->    
+// const HeaderComponent = ()=>{
+//     return(
+//         <div style={headerColour} className="header">
+//             <Title />
+//             <div className="nav-items">
+//                 <ul>
+//                     <li>Home</li>
+//                     <li>About</li>
+//                     <li>Contact</li>
+//                     <li>Cart</li>
+//                 </ul>
+//             </div>
+//         </div>
+//     );
 
-};
+// };
 
 // const burgerKing={
 //     name: "Burger King",
