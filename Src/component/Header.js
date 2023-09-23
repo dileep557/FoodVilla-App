@@ -9,7 +9,7 @@ const Title = ()=>(
   
        
  // <- Create Header Component ->    
- const HeaderComponent = ()=>{
+ const Header = ()=>{
      return(
          <div className="header">
              <Title />
@@ -25,5 +25,5 @@ const Title = ()=>(
      );
  
  };
-
- export  default HeaderComponent;
+// <- Header Component default exprort -> //
+ export  default Header;
