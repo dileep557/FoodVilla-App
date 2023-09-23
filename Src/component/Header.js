@@ -8,10 +8,11 @@ const Title = ()=>(
      );
   
        
- // <- Create Header Component ->    
+ // <- Create Header Component ->  
+ const color1= {backgroundColor:"gray"} ; 
  const Header = ()=>{
      return(
-         <div className="header">
+         <div style={color1}  className="header">
              <Title />
              <div className="nav-items">
                  <ul>

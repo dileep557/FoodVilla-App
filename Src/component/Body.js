@@ -3,6 +3,7 @@ import { restaurantList } from "./constant";
 import RestrauntCard from "./RestrauntCard";
 import { useState } from "react";
 
+//******** Add filter function to filter restraunts ***************** */
 function filterData(searchText, Restaurant){
 
  const data=   Restaurant.filter((restaurant)=>
@@ -17,6 +18,7 @@ const Body= ()=>{
 
     // <- useState returns variable name and function to change the variable -> // 
     const [searchText, setsearchText]= useState();
+    
     const [Restaurant, setRestaurants]= useState(restaurantList);
     //********* */ <- SearchText is state variable -> ***********************//
     //************<-  State keeps trsck of variable in react*****************//
