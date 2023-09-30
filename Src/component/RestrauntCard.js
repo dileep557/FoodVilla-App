@@ -2,7 +2,7 @@
 import { IMG_CDN_URL } from "./constant";
 
 // <- Restrauntcard Component -> //
-const RestrauntCard = ({name, cuisines,cloudinaryImageId , avgRatingString, lastMileTravelString})=>{
+const RestrauntCard = ({name, cuisines, cloudinaryImageId , avgRatingString, lastMileTravelString})=>{
     return (
         
         <div   className="card">
