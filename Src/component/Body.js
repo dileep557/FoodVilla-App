@@ -8,7 +8,7 @@ import Shimmer from "./Shimmer";
 function filterData(searchText, Restaurant){
 
  const data= Restaurant.filter((restaurant)=>
-    restaurant.info.name.includes(searchText)
+    restaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
     
     
     )
@@ -18,9 +18,12 @@ function filterData(searchText, Restaurant){
 const Body= ()=>{
 
     // <- useState returns variable name and function to change the variable -> // 
-    const [searchText, setsearchText]= useState();
+    const [searchText, setsearchText]= useState('');
     
-    const [Restaurant, setRestaurant]= useState(restaurantList);
+    const [AllRestaurant, setAllRestaurant]= useState([]);
+    const [filteredRestaurant, setFilteredRestaurant]= useState([]);
+
+
     //********* */ <- SearchText is state variable -> ***********************//
     //************<-  State keeps track of variable in react*****************//
 
@@ -36,19 +39,20 @@ const Body= ()=>{
     );
     const json = await data.json();
    
-   const restaurants1 = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+   //const restaurants1 = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
    
-  setRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+   setAllRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+   setFilteredRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   
    
  }
-// if (!Restaurant) return null;
-console.log(Restaurant);
+if (!AllRestaurant) return null;
+if(filteredRestaurant.length===0) return <h1>Restaurant Not Found !</h1>
  
  
 
   
-    return (Restaurant.length===0)? <Shimmer/>:  (
+    return (AllRestaurant.length===0)? <Shimmer/>:  (
         <>
         <div className="search-container">
             <input type="text"
@@ -65,8 +69,8 @@ console.log(Restaurant);
               className="search-btn"
               onClick={()=>{
 
-                 const Data= filterData(searchText, Restaurant)
-                 setRestaurant(Data);
+                 const Data= filterData(searchText, AllRestaurant)
+                 setFilteredRestaurant(Data);
 
                } }
 
@@ -77,7 +81,7 @@ console.log(Restaurant);
         
         <div  className="restraunt-List">
          {
-            Restaurant.map((restaurant)=>{
+            filteredRestaurant.map((restaurant)=>{
                 return <RestrauntCard {...restaurant.info} key={restaurant?.info?.id} />
             })
          }
