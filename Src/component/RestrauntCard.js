@@ -2,7 +2,7 @@
 import { IMG_CDN_URL } from "./constant";
 
 // <- Restrauntcard Component -> //
-const RestrauntCard = ({name, cuisines, cloudinaryImageId , avgRatingString, lastMileTravelString})=>{
+const RestrauntCard = ({name, cuisines, cloudinaryImageId , avgRatingString})=>{
     return (
         
         <div   className="card">
@@ -11,7 +11,7 @@ const RestrauntCard = ({name, cuisines, cloudinaryImageId , avgRatingString, las
             <h2>{name}</h2>
             <h3>{cuisines?.join(" ,")}</h3>
             <h4>{avgRatingString}</h4>
-            <h5>{lastMileTravelString}</h5>
+            
             
         </div>
         

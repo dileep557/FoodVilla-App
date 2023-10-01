@@ -20,7 +20,7 @@ const Body= ()=>{
     // <- useState returns variable name and function to change the variable -> // 
     const [searchText, setsearchText]= useState();
     
-    const [Restaurant, setRestaurant]= useState([]);
+    const [Restaurant, setRestaurant]= useState(restaurantList);
     //********* */ <- SearchText is state variable -> ***********************//
     //************<-  State keeps track of variable in react*****************//
 
@@ -66,7 +66,7 @@ console.log(Restaurant);
               onClick={()=>{
 
                  const Data= filterData(searchText, Restaurant)
-                 setRestaurants(Data);
+                 setRestaurant(Data);
 
                } }
 
