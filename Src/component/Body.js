@@ -47,7 +47,7 @@ const Body= ()=>{
    
  }
 if (!AllRestaurant) return null;
-if(filteredRestaurant.length===0) return <h1>Restaurant Not Found !</h1>
+//if(filteredRestaurant.length===0) return <h1>Restaurant Not Found !</h1>
  
  
 
