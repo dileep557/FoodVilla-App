@@ -29,12 +29,13 @@
     padding: 10px;
     height: auto;
     text-wrap: wrap;
-    background: darkgrey;
+    
     
 }
 
 .card > img{
     width: 100%;
+    border-radius: 1px;
 
 }
 
