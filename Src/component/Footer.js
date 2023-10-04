@@ -1,7 +1,9 @@
+
 const Footer= ()=>{
     return(
+        <img src="footer.png" alt="Footer Image" ></img>
+
         
-        <h1> footer</h1>
     )
 };
 

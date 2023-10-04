@@ -3,6 +3,7 @@ import { restaurantList } from "./constant";
 import RestrauntCard from "./RestrauntCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 //******** Add filter function to filter restraunts ***************** */
 function filterData(searchText, Restaurant){
@@ -39,14 +40,15 @@ const Body= ()=>{
     );
     const json = await data.json();
    
-   //const restaurants1 = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+   const restaurants1 = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
    
    setAllRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
    setFilteredRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+   console.log(restaurants1);
   
    
  }
-if (!AllRestaurant) return null;
+//if (!AllRestaurant) return null;
 //if(filteredRestaurant.length===0) return <h1>Restaurant Not Found !</h1>
  
  
@@ -82,7 +84,13 @@ if (!AllRestaurant) return null;
         <div  className="restraunt-List">
          {
             filteredRestaurant.map((restaurant)=>{
-                return <RestrauntCard {...restaurant.info} key={restaurant?.info?.id} />
+
+                return (
+                  <Link  to={"/restraunt/"+restaurant?.info?.id} key={restaurant?.info?.id} >
+                  <RestrauntCard {...restaurant.info}  />
+                  </Link>
+                )
+                
             })
          }
         

@@ -27,7 +27,7 @@
     border: 1px solid black;
     margin: 10px;
     padding: 10px;
-    height: auto;
+    height: 400px;
     text-wrap: wrap;
     
     
@@ -53,5 +53,14 @@
     padding: 10px;
     height: 300px;
     background: lightgrey;
+
+}
+
+.menu > img{
+
+    width: 30%;
+    height: 35%;
+    display: flex;
+    margin-left: 2px;
 
 }
