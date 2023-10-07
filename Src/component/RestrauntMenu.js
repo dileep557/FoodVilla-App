@@ -31,7 +31,7 @@ const RestrauntMenu= ()=>{
          <h4>{Restaurant.costForTwoMessage} </h4>
          <h4>{"City :"+Restaurant.city}</h4>
          <h4>{"locality :"+Restaurant.locality}</h4>
-         <h4>{"TotalRating"+Restaurant.totalRatingsString}</h4>
+         <h4>{"TotalRating :"+Restaurant.totalRatingsString}</h4>
          <h4>{"Restaurant id :"+Restaurant.id}</h4>
 
          <div className="RestroMenu">

@@ -8,6 +8,7 @@ import Error from "./component/Error";
 import Contact from "./component/Contact";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestrauntMenu from "./component/RestrauntMenu";
+import Profile from "./component/Profile";
 
 //************************************************************************************************************************************** */
 
@@ -38,7 +39,12 @@ const appRouter= createBrowserRouter([
         },
         {
             path: "/about",
-            element: <About/>
+            element: <About/>,
+            children:[{
+
+                path: "profile",
+                element: <Profile />
+            }]
     
         },
         {
