@@ -1,5 +1,5 @@
 // <- Named import IMG_CDN_URL FROM CONSTANT FILE -> //
-import { IMG_CDN_URL } from "./constant";
+import { IMG_CDN_URL } from "../constant";
 
 // <- Restrauntcard Component -> //
 const RestrauntCard = ({name, cuisines, cloudinaryImageId , avgRatingString})=>{

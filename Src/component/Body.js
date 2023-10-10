@@ -1,20 +1,11 @@
 import { useState } from "react";
-import { restaurantList } from "./constant";
+import { restaurantList } from "../constant";
 import RestrauntCard from "./RestrauntCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
-//******** Add filter function to filter restraunts ***************** */
-function filterData(searchText, Restaurant){
-
- const data= Restaurant.filter((restaurant)=>
-    restaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
-    
-    
-    )
-    return data;
-}
+import { filterData } from "../utils/filterHelper";
+import { GET_RESTRAUNTS_URL } from "../constant";
 
 const Body= ()=>{
 
@@ -35,9 +26,7 @@ const Body= ()=>{
   }, []);
 
   async function getRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(GET_RESTRAUNTS_URL);
     const json = await data.json();
    
    const restaurants1 = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
@@ -48,7 +37,7 @@ const Body= ()=>{
   
    
  }
-//if (!AllRestaurant) return null;
+if (!AllRestaurant) return null;
 //if(filteredRestaurant.length===0) return <h1>Restaurant Not Found !</h1>
  
  
