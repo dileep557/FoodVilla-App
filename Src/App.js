@@ -9,9 +9,11 @@ import Contact from "./component/Contact";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestrauntMenu from "./component/RestrauntMenu";
 import Profile from "./component/Profile";
+import { lazy, Suspense } from "react";
+import Shimmer from "./component/Shimmer";
 
 //************************************************************************************************************************************** */
-
+const Instamart = lazy(()=> import("./component/Instamart"));
 const AppLayout = ()=>{
 
     return(
@@ -40,10 +42,10 @@ const appRouter= createBrowserRouter([
         {
             path: "/about",
             element: <About/>,
-            children:[{
+            children:[{ //**** To create nested route create children of children ******/
 
-                path: "profile",
-                element: <Profile />
+                path: "profile",    // *** do not write /Profile beacause it consider localhost:1234/Profile****//
+                element: <Profile />//*** beacause / indicate root localhost:1234/root */
             }]
     
         },
@@ -56,7 +58,13 @@ const appRouter= createBrowserRouter([
             path: "/restraunt/:id",
             element: <RestrauntMenu />
 
-        }
+        },
+        {
+            path: "/instamart",
+        // fallback is props pass it show anything until instamart component is loading //
+            element: <Suspense fallback={<Shimmer />}><Instamart/></Suspense>
+    
+        },
      ],
     },
 

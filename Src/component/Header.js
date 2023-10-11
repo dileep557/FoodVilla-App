@@ -22,6 +22,7 @@ const Title = ()=>(
                      <li><Link to="/about">about</Link></li>
                      <li><Link to="/contact">contact</Link></li>
                      <li><Link to="/cart">cart</Link></li>
+                     <li><Link to="/instamart">instamart</Link></li>
                      
                      
                  </ul>

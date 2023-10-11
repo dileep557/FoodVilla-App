@@ -6,6 +6,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/filterHelper";
 import { GET_RESTRAUNTS_URL } from "../constant";
+import useOnline from "../utils/useOnline";
 
 const Body= ()=>{
 
@@ -18,12 +19,15 @@ const Body= ()=>{
 
     //********* */ <- SearchText is state variable -> ***********************//
     //************<-  State keeps track of variable in react*****************//
-
+    // <- useEffect is REact hooks that are imported in react ****************//
     // <- useEffect first accept one callback function and depedency array  -> //
+    // <- useEffect call after the component render if dependency array is empty ->
+    // <- then its call only one time after Component  initial render if dependency ->
+    // <- array have variable then its call everytime when the variable change after rendering the commponent -> //
 
     useEffect(() => {
     getRestaurants();
-  }, []);
+    }, []);
 
   async function getRestaurants() {
     const data = await fetch(GET_RESTRAUNTS_URL);
@@ -39,11 +43,16 @@ const Body= ()=>{
  }
 if (!AllRestaurant) return null;
 //if(filteredRestaurant.length===0) return <h1>Restaurant Not Found !</h1>
- 
- 
 
-  
-    return (AllRestaurant.length===0)? <Shimmer/>:  (
+ const status= useOnline();
+ if(!status) return (
+  <>
+ <h1> OOPs ,Offline! </h1>
+ <h1> Check your internet connection ! </h1>
+
+ </>)
+
+  return (AllRestaurant.length===0)? <Shimmer/>:  (
         <>
         <div className="search-container">
             <input type="text"
