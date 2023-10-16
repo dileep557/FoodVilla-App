@@ -9,21 +9,29 @@ import Contact from "./component/Contact";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestrauntMenu from "./component/RestrauntMenu";
 import Profile from "./component/Profile";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 import Shimmer from "./component/Shimmer";
+import UserContext from "./utils/UserContext";
 
 //************************************************************************************************************************************** */
+//****** / <- Import Lazy loading For Instamart -> ***************//
 const Instamart = lazy(()=> import("./component/Instamart"));
 const AppLayout = ()=>{
 
+    const [user, setuser]= useState({
+        name: "Dileep Yadav ",
+        email: "yadavdileep557@gmail.com"
+
+    });
+
     return(
      
-        
-        <>
+        // context Provider is used to update the context value 
+        <UserContext.Provider value={{user: user}}>
         <Header />
         <Outlet />
         <Footer />
-        </>
+        </UserContext.Provider>
 
      );
 }

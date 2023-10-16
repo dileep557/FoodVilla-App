@@ -54,10 +54,10 @@ if (!AllRestaurant) return null;
 
   return (AllRestaurant.length===0)? <Shimmer/>:  (
         <>
-        <div className="search-container">
+        <div className="search-container m-2 p-2">
             <input type="text"
               placeholder="Search"
-              className="search-input"
+              className="search-input p-1 rounded focus:bg-gray-100  border-solid border-2 border-black"
               value={searchText}
               onChange={(e)=>{
                 setsearchText(e.target.value)
@@ -66,7 +66,7 @@ if (!AllRestaurant) return null;
 
               <button 
               
-              className="search-btn"
+              className="search-btn m-1 p-1 bg-black text-white rounded hover:bg-green-900 "
               onClick={()=>{
 
                  const Data= filterData(searchText, AllRestaurant)
@@ -79,7 +79,7 @@ if (!AllRestaurant) return null;
 
         </div>
         
-        <div  className="restraunt-List">
+        <div  className="restraunt-List flex flex-wrap ">
          {
             filteredRestaurant.map((restaurant)=>{
 

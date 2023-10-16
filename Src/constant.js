@@ -738,4 +738,4 @@ export const FETCH_MENU_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REG
 
 export const GET_RESTRAUNTS_URL= "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING";
 
-
+export const LOGO_URL="https://lh3.googleusercontent.com/Em7AHf7XBH_RtGfCBVXz9RH8SM_pHkj3xPP-yd3cRguY1_Jc8fmqgx6WxnvGVyPV5xs5gL3HCD0FCuv6Xo4CwoY6ak4"

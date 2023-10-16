@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import { LOGO_URL } from "../constant";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 
 const Title = ()=>(
 
     <a href="/">    
-     <img  className="logo" alt="Food villa" src="https://th.bing.com/th/id/OIP.TIX4gD8UPaw4UwNhjTX5pgHaHa?pid=ImgDet&rs=1"></img>
+     <img  className="h-28 m-1 p-1" alt="Food villa" src={LOGO_URL}></img>
      
      </a>
  
@@ -11,22 +14,26 @@ const Title = ()=>(
   
        
  // <- Create Header Component ->  
- const color1= {backgroundColor:"gray"} ; 
+ //const color1= {backgroundColor:"gray"} ; 
  const Header = ()=>{
+    const {user}= useContext(UserContext);
+  
      return(
-         <div style={color1}  className="header">
+         <div className="flex space justify-between bg-pink-200 border-double border-2 border-black">
              <Title />
              <div className="nav-items">
-                 <ul>
-                     <li><Link to="/">Home</Link></li>
-                     <li><Link to="/about">about</Link></li>
-                     <li><Link to="/contact">contact</Link></li>
-                     <li><Link to="/cart">cart</Link></li>
-                     <li><Link to="/instamart">instamart</Link></li>
+                 <ul className="flex py-10">
+                     <li className="px-3"><Link to="/">Home</Link></li>
+                     <li className="px-3"><Link to="/about">about</Link></li>
+                     <li className="px-3"><Link to="/contact">contact</Link></li>
+                     <li className="px-3"><Link to="/cart">cart</Link></li>
+                     <li className="px-3"><Link to="/instamart">instamart</Link></li>
                      
                      
                  </ul>
              </div>
+             <h1 className="font-bold p-10">{user.name}</h1>
+             
          </div>
      );
  
