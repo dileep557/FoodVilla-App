@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../constant";
 import Shimmer from "./Shimmer";
 import useRestraunt from "../utils/useRestraunt";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 const RestrauntMenu= ()=>{
 
    //*** <- useParams is hooks that is use to read the dynamic Url params -> ****//
@@ -12,26 +14,36 @@ const RestrauntMenu= ()=>{
 //*****<- create own hooks useRestraunt inside (utils/useRestraunt) and call it here ->*****/    
     const Restaurant= useRestraunt(id);
 
+    const dispatch= useDispatch();
+    const handleitem= ( item)=>{
+        dispatch(addItem(item));
+    };
+
+
+
     return !Restaurant? <Shimmer/>: (
-        <div className="menu">
-         <h1>{Restaurant.name}</h1>
-         <img src={IMG_CDN_URL+Restaurant?.cloudinaryImageId}></img>
+        <div className="Menu flex">
+        <div className=" my-5  ">
+         
+         <img src={IMG_CDN_URL+Restaurant?.cloudinaryImageId} className="border-solid border-2 border-black "></img>
+         <h1 className=" font-bold">{Restaurant.name}</h1>
 
-         <h3>{Restaurant.cuisines?.join(",")}</h3>
-         <h4>{Restaurant.menu}</h4>
-         <h4>{Restaurant.costForTwoMessage} </h4>
-         <h4>{"City :"+Restaurant.city}</h4>
-         <h4>{"locality :"+Restaurant.locality}</h4>
-         <h4>{"TotalRating :"+Restaurant.totalRatingsString}</h4>
-         <h4>{"Restaurant id :"+Restaurant.id}</h4>
+         <h3>{Restaurant?.cuisines?.join(",")}</h3>
+         <h4>{Restaurant?.menu}</h4>
+         <h4>{Restaurant?.costForTwoMessage} </h4>
+         <h4>{"City :"+Restaurant?.city}</h4>
+         <h4>{"locality :"+Restaurant?.locality}</h4>
+         <h4>{"TotalRating :"+Restaurant?.totalRatingsString}</h4>
+         <h4>{"Restaurant id :"+Restaurant?.id}</h4>
+        </div> 
 
-         <div className="RestroMenu">
-         <h1>Restaurant Menu</h1>
-    <ol>
+    
+    <ol className=" p-2 mx-5 ">
+        <h1 className="font-bold">RestrauntMenu :</h1>
         <li>
             <h2>Appetizers</h2>
             <ul>
-                <li>Garlic Parmesan Wings</li>
+                <li>Garlic Parmesan Wings <button className="font-bold bg-green-700 border-solid border-2 border-black " onClick={()=>handleitem("Garlic Parmesan Wings")}>Add</button> </li>
                 <li>Spinach and Artichoke Dip</li>
                 <li>Bruschetta</li>
                 <li>Crispy Calamari</li>
@@ -75,14 +87,6 @@ const RestrauntMenu= ()=>{
         </li>
     </ol>
     </div>
+)}
 
-
-</div>
-
-
-    )
-
-
-
-}
 export default RestrauntMenu;

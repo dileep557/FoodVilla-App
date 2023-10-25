@@ -1,4 +1,4 @@
-/******** Add filter function to filter restraunts ***************** */
+/******** Add filter function to filter restraunts ******************/
  export function filterData(searchText, Restaurant){
 
     const data= Restaurant.filter((restaurant)=>
