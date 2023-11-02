@@ -79,7 +79,7 @@ if (!AllRestaurant) return null;
 
         </div>
         
-        <div  className="restraunt-List flex flex-wrap ">
+        <div  className="restraunt-List flex flex-wrap ml-10 ">
          {
             filteredRestaurant.map((restaurant)=>{
 

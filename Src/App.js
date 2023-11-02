@@ -14,6 +14,8 @@ import Shimmer from "./component/Shimmer";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import store from "./utils/store";
+import Cart from "./component/cart";
+import ColorChange from "./component/ColorChange";
 
 //***************************************************************************************************************************************/
 //****** <- Import Lazy loading For Instamart -> ***************//
@@ -80,6 +82,17 @@ const appRouter= createBrowserRouter([
             element: <Suspense fallback={<Shimmer />}><Instamart/></Suspense>
     
         },
+        {
+            path: "/cart",
+            element: <Cart />
+
+        },
+        {
+            path: "/color",
+            element: <ColorChange />
+
+        },
+
      ],
     },
 

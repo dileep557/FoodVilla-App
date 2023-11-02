@@ -1,6 +1,6 @@
 const Shimmer=()=>{
     return (
-    <div className="">
+    <div className="filter">
     {
         Array(20).
         fill(" ").

@@ -1,5 +1,9 @@
+import React from "react";
+
 const Photo=()=>(
-    <img src="./footer.png" alt="Footer Image" ></img>
+    <>
+    <img className="h-28 m-1 p-1" src="https://1drv.ms/i/s!AoEzAGXraRx4ho5SvRURaAkLGmkoaQ?e=D09vSv" alt="Footer Image" ></img>
+    </>
 
 
 )
@@ -8,7 +12,11 @@ const Photo=()=>(
 const Footer= ()=>{
 
     return(
-        <Photo />
+        <>
+        <Photo/>
+        
+        </>
+        
     );
 
 };

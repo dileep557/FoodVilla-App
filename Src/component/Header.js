@@ -4,10 +4,10 @@ import { useContext } from "react";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
-const Title = ()=>(
+export const Title = ()=>(
 
     <a href="/">    
-     <img  className="h-28 m-1 p-1" alt="Food villa" src={LOGO_URL}></img>
+     <img  className="h-28 m-1 p-1" alt="FoodVilla" src={LOGO_URL}></img>
      
     </a>
  
@@ -20,7 +20,9 @@ const Title = ()=>(
     const {user}= useContext(UserContext);
 
    // useSelector hook used to subscribe cartSlice that help to read the cart value //
-    const cartItem= useSelector((store)=>store.cart.item);
+  // this is place from where you tell which portion of store you want to subscribe ((store)=>store.cart.item) //
+    const cartItem= useSelector((store)=>store.cart.item); 
+    console.log(cartItem);
 
   
      return(
@@ -33,6 +35,8 @@ const Title = ()=>(
                      <li className="px-3"><Link to="/contact">contact</Link></li>
                      <li className="px-3"><Link to="/cart">cart -{cartItem.length}items</Link></li>
                      <li className="px-3"><Link to="/instamart">instamart</Link></li>
+                    
+                     
                      
                      
                   </ul>
