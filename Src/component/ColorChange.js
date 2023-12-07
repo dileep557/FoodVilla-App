@@ -7,6 +7,7 @@ const ColorChange=()=> {
   const getRandomColor = () => {
     const colors = ['#3498db', '#e74c3c', '#27ae60', '#f1c40f', '#9b59b6', '#e67e22'];
     const randomIndex = Math.floor(Math.random() * colors.length);
+    
     return colors[randomIndex];
   };
 
